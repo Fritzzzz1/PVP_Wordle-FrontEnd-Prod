@@ -122,7 +122,7 @@ Liran Friedman, 4.5.22
 Liran Friedman, 6.5.22
 ## - Relevant progress:
 - style control improved: 
-   the best conclusion for now as for working with css - always wrap with <div> when assigning classname.
+   the best conclusion for now as for working with css - always wrap with div when assigning classname.
 - organized files.
 - guest play again still goes through signup.
 - score bug "fixed" in GameOver with another state - data update.
