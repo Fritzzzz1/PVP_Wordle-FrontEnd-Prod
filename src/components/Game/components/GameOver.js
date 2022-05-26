@@ -38,13 +38,14 @@ export default function GameOver() {
     }, []);
 
     useEffect(() => {
-        if (contentUpdated){
-            if (currentUser.username === GUEST_USER.username) {
-                axios.post(API_URL + "players/" + GUEST_USER.id +"/games/", gameStats)
-            }
-            else {
-                axios.post(API_URL + "players/" + AuthService.getCurrentUser().player_id +"/games/", gameStats)
-            }}
+    if (contentUpdated) {
+        const user = currentUser.username === GUEST_USER.username ?
+            GUEST_USER.id : AuthService.getCurrentUser().player_id;
+
+        axios.post(API_URL + "players/" + user + "/games/", gameStats);
+    }
+
+    }, [gameStats]);
 
     }, [gameStats]);
 
